@@ -3,6 +3,8 @@ class MyQueue
     QueueFull = Class.new(StandardError)
     QueueEmpty = Class.new(StandardError)
 
+    attr_reader :queue
+
     def initialize(size)
         @size = size
         @queue = []
@@ -32,6 +34,10 @@ class MyQueue
 
     def empty?
         size == 0
+    end
+
+    def clear
+        @queue.clear
     end
 
 end
